@@ -1,147 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-953NSV7QWQ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-953NSV7QWQ');
+    </script>
+
     <meta charset="UTF-8">
-    <title>Kyuewon Kim | Kyung Hee University</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Kyuewon Kim | KAIST</title>
+    <link rel="icon" href="./images/icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --primary-color: #111;
             --secondary-color: #555;
-            --link-color: #1f4ed8;
+            --link-color: #2753C5;
             --bg-color: #ffffff;
             --border-color: #eeeeee;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            background: var(--bg-color);
-            color: var(--primary-color);
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; color: var(--primary-color); background-color: var(--bg-color); 
         }
 
         nav {
-            position: sticky;
-            top: 0;
-            background: rgba(255,255,255,0.95);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1.2rem 0;
-            z-index: 1000;
+            position: sticky; top: 0; background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--border-color); z-index: 1000; padding: 1.2rem 0;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 25px;
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 25px; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
 
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul li a { text-decoration: none; color: var(--secondary-color); font-weight: 500; font-size: 0.95rem; }
+        nav ul li a:hover { color: var(--link-color); }
 
-        .site-title {
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
+        section { padding: 50px 0; border-bottom: 1px solid var(--border-color); }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
+        h2 { font-size: 1.6rem; margin-bottom: 1.8rem; font-weight: 700; }
+        h3 { font-size: 1.2rem; margin: 2rem 0 1rem; color: var(--secondary-color); }
 
-        nav a {
+        .about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: center; }
+        .about-img { width: 100%; border-radius: 12px; border: 1px solid var(--border-color); }
+
+        .about-text h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
+
+        .btn-style { 
             text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: 500;
-        }
-
-        nav a:hover { color: var(--link-color); }
-
-        section {
-            padding: 60px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-img {
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .about-text h1 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .btn-style {
-            text-decoration: none;
-            font-size: 0.85rem;
+            color: #000;
+            font-size: 0.85rem; 
             font-weight: 600;
-            background: #f2f2f2;
-            padding: 6px 16px;
+            background: #f1f1f1;
+            padding: 6px 16px; 
             border-radius: 25px;
             border: 1px solid #e0e0e0;
-            display: inline-flex;
-            gap: 5px;
         }
 
-        .btn-style:hover {
-            background: #e5e5e5;
-        }
+        .social-links { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 10px; }
 
-        .social-links {
-            margin-top: 1.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .list-item {
-            margin-bottom: 2rem;
-        }
-
-        .item-title {
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .item-venue {
-            font-style: italic;
-            color: var(--secondary-color);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: #999;
-            font-size: 0.8rem;
-        }
+        footer { text-align: center; padding: 50px 0; color: #999; font-size: 0.8rem; }
 
         @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
+            .about-grid { grid-template-columns: 1fr; text-align: center; }
         }
     </style>
 </head>
@@ -150,11 +77,14 @@
 
 <nav>
     <div class="container nav-content">
-        <div class="site-title">Kyuewon Kim</div>
+        <a href="index.html">
+            <img src="./images/logo.png" alt="Kyuewon Kim" style="height: 32px;">
+        </a>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#publications">Publications</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="./projects.html">Projects</a></li> 
         </ul>
     </div>
 </nav>
@@ -166,32 +96,17 @@
         <img src="./images/profile.jpg" alt="Kyuewon Kim" class="about-img">
         <div class="about-text">
             <h1>Kyuewon Kim</h1>
-            <p style="color:#1f4ed8; font-weight:600;">
-                Ph.D. Student | Department of Information Display  
-                Kyung Hee University, Seoul
+            <p style="font-size: 1.0rem; color: #111; font-weight: 300; margin-bottom: 1.0rem;">
+                Ph.D. Student @ HCI Tech Lab, KAIST
             </p>
-
-            <p>
-                I am a Ph.D. student in the Department of Information Display at 
-                <strong>Kyung Hee University</strong>. My research lies at the intersection of 
-                <strong>Virtual Reality (VR), Extended Reality (XR), and Human-Computer Interaction (HCI)</strong>.
-            </p>
-
-            <p>
-                My current work focuses on <strong>VR motion sickness mitigation using perceptually adaptive peripheral vision display techniques</strong>. 
-                I design and evaluate display adaptation algorithms such as peripheral brightness modulation and peripheral resolution reduction 
-                to reduce cybersickness while maintaining immersion and presence.
-            </p>
-
-            <p>
-                <strong>Keywords:</strong> VR Motion Sickness, Peripheral Vision Modulation, Human Perception Modeling, XR Display Systems
-            </p>
+            <p>Kyuewon Kim is a Ph.D. student in HCI Tech Lab at KAIST.</p>
 
             <div class="social-links">
-                <a href="mailto:kyuewonkim@khu.ac.kr" class="btn-style">✉️ Email</a>
-                <a href="https://github.com/yourgithub" class="btn-style">💻 GitHub</a>
+                <a href="mailto:your_email@example.com" class="btn-style">✉️ E-mail</a>
+                <a href="#" class="btn-style">👥 LinkedIn</a>
+                <a href="#" class="btn-style">📄 CV</a>
                 <a href="#" class="btn-style">🎓 Google Scholar</a>
-                <a href="./assets/CV_Kyuewon_Kim.pdf" class="btn-style">📄 CV</a>
+                <a href="#" class="btn-style">💻 Github</a>
             </div>
         </div>
     </div>
@@ -199,38 +114,16 @@
 
 <section id="publications">
     <h2>Publications</h2>
-
-    <div class="list-item">
-        <div class="item-title">
-            Perceptually Adaptive Peripheral Display Techniques for VR Motion Sickness Mitigation
-        </div>
-        <div>
-            <strong>Kyuewon Kim</strong>, et al.
-        </div>
-        <div class="item-venue">
-            IEEE ISMAR 2026 (Under Review)
-        </div>
-    </div>
-
+    <p>Coming soon.</p>
 </section>
 
 <section id="experience">
     <h2>Experience</h2>
-
-    <div class="list-item">
-        <div class="item-title">
-            Human-Centered Extended Reality Lab, Kyung Hee University
-        </div>
-        <div>Ph.D. Student | Mar. 2024 – Present</div>
-        <div>
-            Research on perceptually adaptive display techniques for mitigating VR motion sickness.
-        </div>
-    </div>
-
+    <p>Coming soon.</p>
 </section>
 
 <footer>
-    © 2026 Kyuewon Kim. All rights reserved.
+    <p>&copy; 2026 Kyuewon Kim. All rights reserved.</p>
 </footer>
 
 </div>
