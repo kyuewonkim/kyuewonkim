@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-953NSV7QWQ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-953NSV7QWQ');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soyeong Yang | KAIST</title>
+    <link rel="icon" href="./images/icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #111;
+            --secondary-color: #555;
+            --link-color: #2753C5;
+            --bg-color: #ffffff;
+            --border-color: #eeeeee;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; color: var(--primary-color); background-color: var(--bg-color); 
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky; top: 0; background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--border-color); z-index: 1000; padding: 1.2rem 0;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 25px; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .site-title { font-size: 1.3rem; font-weight: 700; text-decoration: none; color: inherit; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul li a { text-decoration: none; color: var(--secondary-color); font-weight: 500; font-size: 0.95rem; }
+        nav ul li a:hover { color: var(--link-color); }
+
+        /* Sections */
+        section { padding: 50px 0; border-bottom: 1px solid var(--border-color); }
+        h2 { font-size: 1.6rem; margin-bottom: 1.8rem; font-weight: 700; color: var(--primary-color); display: flex; align-items: center; }
+        h3 { font-size: 1.2rem; margin: 2rem 0 1rem; color: var(--secondary-color); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* About Section */
+        .about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: center; }
+        .about-img { width: 100%; border-radius: 12px; filter: grayscale(10%); border: 1px solid var(--border-color); }
+        .about-text h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
+        .about-text .position { font-size: 1.0rem; color: var(--link-color); font-weight: 600; margin-bottom: 1.5rem; }
+        .about-text p { margin-bottom: 0.5rem; color: var(--secondary-color); }
+        
+        .about-text a, .info-desc a { 
+            color: var(--link-color); 
+            text-decoration: underline; 
+            font-weight: 600;
+        }
+
+        /* Button Design */
+        .btn-style { 
+            text-decoration: none !important;
+            color: #000000 !important;
+            font-size: 0.85rem; 
+            font-weight: 600;
+            background: #f1f1f1;
+            padding: 6px 16px; 
+            border-radius: 25px;
+            transition: all 0.2s ease;
+            border: 1px solid #e0e0e0;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-style:hover { 
+            background: #e5e5e5; 
+            transform: translateY(-1px);
+        }
+
+        .social-links { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 10px; }
+
+        /* Publications & List Style */
+        .list-item { display: grid; grid-template-columns: 220px 1fr; gap: 30px; margin-bottom: 3rem; }
+        .item-img { width: 100%; height: 120px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); }
+        .item-title { font-size: 1.05rem; font-weight: 600; color: var(--primary-color); margin-bottom: 4px; }
+        .item-authors { font-size: 0.95rem; color: var(--primary-color); }
+        .item-authors span.me { text-decoration: underline; }
+        .item-venue { font-size: 0.9rem; color: var(--secondary-color); font-style: italic; margin: 4px 0; }
+        .item-links { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+        /* Experience Blocks */
+        .info-block { margin-bottom: 1.5rem; }
+        .info-header { display: flex; justify-content: space-between; font-weight: 600; color: var(--primary-color); }
+        .info-sub { color: var(--secondary-color); font-size: 0.9rem; margin-bottom: 4px; }
+        .info-desc { font-size: 0.9rem; color: #666; }
+
+        /* Awards & Honors */
+        .bullet-list { list-style: none; padding-left: 0; }
+        .bullet-list li { 
+            position: relative; 
+            padding-left: 1.2rem; 
+            margin-bottom: 0.8rem; 
+            font-size: 0.95rem;
+            color: var(--primary-color);
+        }
+        .bullet-list li::before { 
+            content: "▪"; 
+            position: absolute; 
+            left: 0; 
+            color: var(--primary-color); 
+        }
+
+        /* Academic Service (Two Column Grid) */
+        .service-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
+        .service-title { font-weight: 700; text-align: center; margin-bottom: 15px; font-size: 1rem; }
+        .service-list { list-style: none; text-align: left; padding-left: 0; width: fit-content; margin: 0 auto; }
+        .service-list li { 
+            position: relative; 
+            padding-left: 1.2rem; 
+            margin-bottom: 5px; 
+            font-size: 0.95rem; 
+            color: #333; 
+        }
+        .service-list li::before { 
+            position: absolute; 
+            left: 0; 
+        }
+
+        footer { text-align: center; padding: 50px 0; color: #999; font-size: 0.8rem; }
+
+        /* Modal Background */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.85);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Modal Image */
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: zoomIn 0.3s ease;
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 0.85rem; }
+
+            h1 { font-size: 1.8rem !important; } /* main title */
+            h2 { font-size: 1.3rem !important; margin-bottom: 1.2rem !important; } /* section title (e.g. Publications) */
+            h3 { font-size: 1.0rem !important; margin: 1.5rem 0 0.8rem !important; } /* subsection title (e.g. Papers) */
+            
+            .about-text h1 { font-size: 1.4rem !important; }
+            .about-text p { font-size: 0.85rem !important; }
+
+            .social-links { 
+                justify-content: center !important; 
+                margin-top: 1.2rem !important;
+            }
+            
+            .item-title { font-size: 0.85rem !important; } /* paper title */
+            .item-authors, .item-venue { font-size: 0.8rem !important; }
+            
+            .btn-style { font-size: 0.75rem !important; padding: 4px 12px !important; } /* button size */
+
+            .bullet-list li { font-size: 0.8rem !important; }
+
+            .service-title { font-size: 0.85rem !important; }
+            .service-list li { font-size: 0.8rem !important; }
+
+            .container { padding: 0 15px; }
+            .nav-content { flex-direction: column; gap: 10px; text-align: center; }
+            nav ul { gap: 15px; width: 100%; justify-content: center; overflow-x: auto; padding-bottom: 5px; }
+            .about-grid { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 20px; }
+            .about-img { width: 160px; }
+            .item-img {
+                width: 100% !important;
+                max-width: 250px !important;
+                height: auto !important;
+                object-fit: cover;
+                display: block !important;
+                margin: 0 auto !important;
+            }
+            .list-item { grid-template-columns: 1fr; gap: 10px; }
+            .service-container { grid-template-columns: 1fr; gap: 30px; }
+            .service-list { margin: 0; }
+
+            /* --- Experience mobile layout --- */
+            #experience .list-item {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 10px !important;
+            }
+            #experience .list-item img {
+                margin-top: 0 !important;
+                width: 70px !important;   /* minimize logo image */
+                height: auto !important;
+                margin-bottom: 5px;
+            }
+            #experience .info-block {
+                width: 100%;
+            }
+            #experience .info-header {
+                flex-direction: column;
+                gap: 2px;
+            }
+            #experience .info-header span:first-child { order: 1; display: block; font-size: 0.95rem; } /* institution */
+            #experience .info-header span:last-child { order: 2; display: block; font-weight: 400; font-size: 0.85rem; } /* period */
+            #experience .info-sub { order: 3; display: block; margin-top: 2px; font-size: 0.8rem; } /* position */
+            #experience .info-desc { order: 4; display: block; margin-top: 2px; font-size: 0.8rem; } /* content */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html">
+                <img src="./images/logo.png" alt="Soyeong Yang" style="height: 32px; width: auto; display: block;">
+            </a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="./projects.html">Projects</a></li> 
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="about" style="border-bottom: 1px solid var(--border-color);">
+            <div class="about-grid">
+                <img src="./images/Soyeong_profile3.jpeg" alt="Soyeong Yang" class="about-img">
+                <div class="about-text">
+                    <h1>Soyeong Yang</h1>
+                    <p style="font-size: 1.0rem; color: #111; font-weight: 300; margin-bottom: 1.0rem; letter-spacing: -0.02em;">Ph.D. Student @ HCI Tech Lab, KAIST</p>
+                    <p>Soyeong Yang is a Ph.D. student in <a href="https://hcitech.org/index.html" target="_blank">HCI Tech Lab</a> at <a href="https://www.kaist.ac.kr/en/" target="_blank">Korea Advanced Institute of Science and Technology (KAIST)</a>, advised by Prof. Sang Ho Yoon.</p>
+                    <p>Her research interests are <strong>Haptic Rendering, Human Perception, and Virtual Reality</strong>. She focuses on rendering algorithms to ensure that haptic feedback in VR provides users with cognitively meaningful and enhanced experiences.</p>
+                    <p>She earned her M.S. from <strong>KAIST</strong> (<a href="https://meta.kaist.ac.kr/" target="_blank">Metaverse</a>, <a href="https://ct.kaist.ac.kr/" target="_blank">Culture&Technology</a>), and B.E. from <strong>Chung-Ang University</strong> (<a href="https://artech.cau.ac.kr/" target="_blank">Art&Technology</a>).</p>
+                    
+                    <div class="social-links">
+                        <a href="mailto:sy.yang@kaist.ac.kr" class="btn-style">✉️ E-mail</a>
+                        <a href="http://www.linkedin.com/in/soyeong-yang-720bb5362" target="_blank" class="btn-style">👥 LinkedIn</a>
+                        <a href="javascript:void(0);" onclick="openPDF('./assets/CV_Soyeong Yang.pdf')" class="btn-style">📄 CV</a>
+                        <a href="https://scholar.google.com/citations?hl=en&user=nZDOcdoAAAAJ" target="_blank" class="btn-style">🎓 Google Scholar</a>
+                        <a href="https://github.com/SoyeongYang" target="_blank" class="btn-style">💻 Github</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2 style="justify-content: center; border: none;">Publications</h2>
+            <h3>Paper</h3>
+            <div class="list-item">
+                <video src="images/AquaHaptics_TVCG_2026.mp4" class="item-img" autoplay loop muted playsinline></video>
+                <div class="pub-info">
+                    <div class="item-title">AquaHaptics: Hand-based Multimodal Haptic Interactions for Immersive Virtual Underwater Experience</div>
+                    <div class="item-authors"><span class="me">Soyeong Yang</span>, Sang Ho Yoon</div>
+                    <div class="item-venue">IEEE Transactions on Visualization and Computer Graphics (TVCG 2026)</div>
+                    <div class="item-links">
+                        <a href="https://doi.org/10.1109/TVCG.2026.3652832" class="btn-style">DOI</a>
+                        <a href="https://aquahaptics.hcitech.org/" class="btn-style">Project Website</a>
+                        <a href="https://youtu.be/Wb6hJrp4kCM?si=mp78M1cxpOc8Y7ES" class="btn-style">Video</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Demo, Poster and Workshop</h3>
+            <div class="list-item">
+                <img src="images/AquaHaptics_ISMAR_Teaser.png" alt="Demo" class="item-img">
+                <div class="pub-info">
+                    <div class="item-title">AquaHaptics: Hand-Adaptive Haptic Feedback for VR Underwater</div>
+                    <div class="item-authors"><span class="me">Soyeong Yang</span>, Sang Ho Yoon</div>
+                    <div class="item-venue">IEEE International Symposium on Mixed and Augmented Reality (ISMAR 2025 Demo)</div>
+                    <div class="item-links">
+                        <a href="javascript:void(0);" class="btn-style" onclick="openModal('./images/AquaHaptics_ISMAR_2025.jpg')">Poster</a>
+                        <a href="./demo/ISMAR2025.html" class="btn-style">Project Website</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 style="justify-content: center; border: none;">Experience</h2>
+            <h3>Research Experience</h3>
+            <div class="list-item" style="display: grid; grid-template-columns: 140px 1fr; gap: 30px; margin-bottom: 2rem; align-items: flex-start;">
+                <img src="./images/logo_kaist.png" alt="KAIST Logo" style="width: 100%; height: 30px; object-fit: contain; margin-top: 25px;">
+                <div class="info-block">
+                    <div class="info-header" style="display: flex; justify-content: space-between; font-weight: 600;">
+                        <span>Visual Media Lab (KAIST)</span>
+                        <span>Dec. 2021 ~ Feb. 2022</span>
+                    </div>
+                    <div class="info-sub">Research Intern</div>
+                    <div class="info-desc">Character Simulation Techniques based on Physics Engine using Deep Reinforcement Learning.</div>
+                </div>
+            </div>
+            <div class="list-item" style="display: grid; grid-template-columns: 140px 1fr; gap: 30px; margin-bottom: 2rem; align-items: flex-start;">
+                <img src="./images/logo_cau.png" alt="CAU Logo" style="width: 100%; height: 60px; object-fit: contain; margin-top: 10px;">
+                <div class="info-block">
+                    <div class="info-header" style="display: flex; justify-content: space-between; font-weight: 600;">
+                        <span>Korea Creative Content Agency & Chung-Ang University</span>
+                        <span>Jun. 2019 ~ Aug. 2019</span>
+                    </div>
+                    <div class="info-sub">Technical Researcher</div>
+                    <div class="info-desc"><a href="https://artech.cau.ac.kr/project/6" target="_blank">Development of Visual Perception Model for Digital Human based on big-data</a>.</div>
+                </div>
+            </div>
+            <h3>Work Experience</h3>
+            <div class="list-item" style="display: grid; grid-template-columns: 140px 1fr; gap: 30px; margin-bottom: 2rem; align-items: flex-start;">
+                <img src="./images/logo_kai.png" alt="KAI Logo" style="width: 100%; height: 45px; object-fit: contain; margin-top: 15px;">
+                <div class="info-block">
+                    <div class="info-header" style="display: flex; justify-content: space-between; font-weight: 600;">
+                        <span>KAI (KAIST Spin-off)</span>
+                        <span>July. 2022 ~ Dec. 2022</span>
+                    </div>
+                    <div class="info-sub">Intern, Software Engineer</div>
+                    <div class="info-desc">Development of Real-time Mobile Chat Application based on Metaverse.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2 style="justify-content: center; border: none;">Awards & Honors</h2>
+            <ul class="bullet-list">
+                <li><strong>KAIST GSMV Student Council</strong> (Spring 2024 ~ Spring 2025)</li>
+                <li><strong>Student Innovation Challenge Sponsored by LG Electronics: Encouragement Award (3rd)</strong> Korea Haptics Conference (Nov. 2023)</li>
+                <li><strong>HCI@KAIST Student Committee</strong> (Mar. 2023 ~ Feb. 2024)</li>
+                <li><strong>KAIST Scholarship</strong> Graduate School of Metaverse (Spring 2023 ~ Present)</li>
+                <li><strong>CAU Undergraduate Fellowship</strong> Dean's List (Spring 2021)</li>
+            </ul>
+        </section>
+
+        <section id="service">
+            <h2 style="justify-content: center; border: none;">Academic Service</h2>
+            <div class="service-container">
+                <div>
+                    <div class="service-title">Reviewer</div>
+                    <ul class="service-list">
+                        <li>ACM CHI Poster 2026</li>
+                        <li>ACM IMWUT 2025</li>
+                        <li>ACM Augmented Humans 2025, 2026</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="service-title">Student Volunteer</div>
+                    <ul class="service-list">
+                        <li>ACM CHI 2025</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Soyeong Yang. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(imgSrc) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            modal.style.display = "flex";
+            modalImg.src = imgSrc;
+            document.body.style.overflow = "hidden";
+        }
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    </script>
+
+    <div id="pdfModal" class="modal" onclick="closePDF()">
+        <div class="modal-content" onclick="event.stopPropagation()" style="width: 90%; max-width: 900px; height: 90vh; padding: 0;">
+            <span class="close-modal" onclick="closePDF()" style="top: -40px; right: 0; color: white;">&times;</span>
+            <iframe id="pdfFrame" src="" style="width: 100%; height: 100%; border: none; border-radius: 8px;"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openPDF(pdfPath) {
+            const modal = document.getElementById("pdfModal");
+            const iframe = document.getElementById("pdfFrame");
+            iframe.src = pdfPath;
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+        function closePDF() {
+            const modal = document.getElementById("pdfModal");
+            const iframe = document.getElementById("pdfFrame");
+            modal.style.display = "none";
+            iframe.src = "";
+            document.body.style.overflow = "auto";
+        }
+    </script>
+</body>
+</html>
